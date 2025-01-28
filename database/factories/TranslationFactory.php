@@ -24,7 +24,7 @@ class TranslationFactory extends Factory
             'key' => $this->faker->unique()->word . $counter++, // Ensures unique keys
             'content' => $this->faker->sentence,
             'locale' => $this->faker->randomElement(['en', 'fr', 'es']),
-            'tags' => json_encode($this->faker->words(3)), // Store as JSON string
+            'tags' => $this->faker->randomElement(['mobile', 'desktop', 'web']),
         ];
     }
 }
