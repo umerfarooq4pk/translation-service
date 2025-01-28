@@ -1,0 +1,133 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Translation Service API",
+        "description": "API documentation for Translation Service API application.",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/translations/export": {
+            "get": {
+                "tags": [
+                    "export translation"
+                ],
+                "summary": "Get all translations to export",
+                "operationId": "c83fb94a27569ad7978202f32bfc5c10",
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/translations": {
+            "get": {
+                "tags": [
+                    "get translation"
+                ],
+                "summary": "get translation record",
+                "operationId": "f9b8aa538460832f576156e6ae4ea901",
+                "responses": {
+                    "201": {
+                        "description": "new translation record created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/translations/{record}": {
+            "get": {
+                "tags": [
+                    "update translation"
+                ],
+                "summary": "update translation record",
+                "operationId": "58eb82cf85965588a949cc7987ef12b1",
+                "responses": {
+                    "204": {
+                        "description": "update translation record",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "delete translation"
+                ],
+                "summary": "Delete translation record",
+                "operationId": "4676501f7634120b6799c6976f9b1f57",
+                "parameters": [
+                    {
+                        "name": "record",
+                        "in": "path",
+                        "description": "ID of the translation record to delete",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Translation record deleted"
+                    },
+                    "404": {
+                        "description": "Translation record not found"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "export translation",
+            "description": "export translation"
+        },
+        {
+            "name": "export translation",
+            "description": "export translation"
+        }
+    ]
+}
