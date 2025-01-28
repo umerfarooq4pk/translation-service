@@ -45,7 +45,7 @@ class TranslationController extends Controller
             $query->where('key', 'LIKE', "%{$request->input('key')}%");
         }
 
-        return response()->json($query->paginate(10));
+        return response()->json($query->paginate(10), 200);
     }
 
     /**
@@ -108,7 +108,7 @@ class TranslationController extends Controller
 
         $translation->update($validated);
 
-        return response()->json($translation);
+        return response()->json($translation, 200);
     }
 
     /**

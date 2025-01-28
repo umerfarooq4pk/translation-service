@@ -28,6 +28,6 @@ class ExportController extends Controller
             return Translation::all(['key', 'content', 'locale']);
         });
 
-        return response()->json($translations);
+        return response()->json($translations, 200);
     }
 }
